@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7d84a" />
+    <meta
+      name="description"
+      content="Shop fresh groceries, fruits, vegetables and everyday essentials with QuickBasket."
+    />
+    <title>QuickBasket | Groceries Delivered Fast</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">
+      Fresh groceries, everyday essentials — all in one place!
+    </div>
+
+    <header class="header">
+      <a class="logo" href="#" aria-label="QuickBasket home">
+        <span class="logo-icon">Q</span>
+        <span>Quick<span class="logo-dark">Basket</span></span>
+      </a>
+
+      <button class="location-btn" id="locationBtn">
+        <span>📍</span>
+        <span class="location-text">
+          <small>Deliver to</small>
+          <strong id="locationLabel">Your location</strong>
+        </span>
+      </button>
+
+      <form class="search-box" id="searchForm">
+        <span>🔍</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search milk, fruits, snacks..."
+          aria-label="Search products"
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <button class="header-btn" id="accountBtn">👤 Account</button>
+      <button class="header-cart" id="cartBtn">
+        🛒 Cart <span id="cartCount">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <span class="eyebrow">YOUR DAILY GROCERY PARTNER</span>
+          <h1>Fresh picks.<br />Happy <span>savings.</span></h1>
+          <p>
+            Everything your home needs, from fresh fruits to everyday
+            essentials.
+          </p>
+          <a href="#products" class="primary-btn"
+            >Shop groceries <span>→</span></a
+          >
+          <div class="hero-note">
+            🥬 Fresh choices &nbsp; · &nbsp; 🛍️ Easy shopping
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Fresh groceries illustration">
+          <div class="art-circle"></div>
+          <div class="art-card art-card-one">🥑</div>
+          <div class="art-card art-card-two">🍊</div>
+          <div class="art-card art-card-three">🥦</div>
+          <div class="art-main">🛍️</div>
+          <div class="art-label">Fresh every day!</div>
+        </div>
+      </section>
+
+      <section class="container trust-strip">
+        <div>
+          <span>🥦</span>
+          <p><strong>Fresh picks</strong><small>Everyday essentials</small></p>
+        </div>
+        <div>
+          <span>🛒</span>
+          <p><strong>Easy shopping</strong><small>Simple ordering</small></p>
+        </div>
+        <div>
+          <span>💚</span>
+          <p>
+            <strong>Made for you</strong><small>Shop your favourites</small>
+          </p>
+        </div>
+      </section>
+
+      <section class="container section" id="categoriesSection">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">EXPLORE THE AISLES</span>
+            <h2>Shop by category</h2>
+          </div>
+        </div>
+        <div id="categories" class="category-grid"></div>
+      </section>
+
+      <section class="container offer-banner">
+        <div>
+          <span class="offer-pill">QUICKBASKET PICKS</span>
+          <h2>Good food. Good mood.</h2>
+          <p>Discover fresh favourites for your everyday routine.</p>
+          <a href="#products" class="offer-link">Explore collection →</a>
+        </div>
+        <div class="offer-art">🍓 🥑 🍋</div>
+      </section>
+
+      <section class="container section" id="products">
+        <div class="section-heading product-heading">
+          <div>
+            <span class="eyebrow">PICKED FOR YOUR HOME</span>
+            <h2 id="productTitle">Popular products</h2>
+            <p class="muted">Everyday essentials, just a few clicks away.</p>
+          </div>
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="default">Recommended</option>
+            <option value="low">Price: Low to high</option>
+            <option value="high">Price: High to low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </div>
+
+        <div id="activeFilters" class="active-filters"></div>
+        <div id="productGrid" class="product-grid"></div>
+        <div id="emptyMessage" class="empty-state" hidden>
+          <div>🔎</div>
+          <h3>No products found</h3>
+          <p>Try another search or category.</p>
+          <button id="resetFilters" class="primary-btn">
+            Show all products
+          </button>
+        </div>
+      </section>
+
+      <section class="container newsletter">
+        <div>
+          <span class="eyebrow">STAY IN THE LOOP</span>
+          <h2>Your grocery inspiration starts here.</h2>
+          <p>More fresh finds, less hassle.</p>
+        </div>
+        <a href="#products" class="primary-btn">Start shopping →</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="logo" href="#"
+        ><span class="logo-icon">Q</span>
+        <span>Quick<span class="logo-dark">Basket</span></span>
+      </a>
+      <p>Everyday groceries, made easy.</p>
+      <div class="footer-links">
+        <a href="#categoriesSection">Categories</a>
+        <a href="#products">Products</a>
+        <button id="footerHelp">Help & information</button>
+      </div>
+      <small>© 2026 QuickBasket. Student demo project.</small>
+    </footer>
+
+    <div id="overlay" class="overlay"></div>
+
+    <aside id="cartDrawer" class="drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <div>
+          <span class="eyebrow">YOUR SELECTION</span>
+          <h2>My cart</h2>
+        </div>
+        <button class="icon-btn" id="closeCart" aria-label="Close cart">
+          ✕
+        </button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span><strong id="subtotal">₹0</strong>
+        </div>
+        <div class="summary-row">
+          <span>Delivery</span><strong id="deliveryFee">₹0</strong>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span><strong id="cartTotal">₹0</strong>
+        </div>
+        <p class="summary-note">Demo checkout. No real payment is collected.</p>
+        <button id="checkoutBtn" class="primary-btn full-btn">
+          Continue to checkout →
+        </button>
+      </div>
+    </aside>
+
+    <dialog id="accountDialog" class="modal">
+      <form id="accountForm">
+        <div class="modal-header">
+          <div>
+            <span class="eyebrow">QUICKBASKET</span>
+            <h2>Your account</h2>
+          </div>
+          <button type="button" class="icon-btn" id="closeAccount">✕</button>
+        </div>
+        <p class="muted">Demo profile — this does not create a real account.</p>
+        <label for="accountName">Your name</label>
+        <input
+          id="accountName"
+          required
+          maxlength="60"
+          placeholder="Enter your name"
+        />
+        <label for="accountEmail">Email address</label>
+        <input
+          id="accountEmail"
+          type="email"
+          required
+          maxlength="120"
+          placeholder="you@example.com"
+        />
+        <button class="primary-btn full-btn" type="submit">
+          Save demo profile
+        </button>
+        <button
+          class="secondary-btn full-btn"
+          type="button"
+          id="logoutBtn"
+          hidden
+        >
+          Log out
+        </button>
+        <p id="accountMessage" class="form-message" aria-live="polite"></p>
+      </form>
+    </dialog>
+
+    <dialog id="locationDialog" class="modal">
+      <form id="locationForm">
+        <div class="modal-header">
+          <div>
+            <span class="eyebrow">DELIVERY DETAILS</span>
+            <h2>Your location</h2>
+          </div>
+          <button type="button" class="icon-btn" id="closeLocation">✕</button>
+        </div>
+        <p class="muted">Enter a city or area for this demo.</p>
+        <label for="locationInput">City / area</label>
+        <input
+          id="locationInput"
+          required
+          maxlength="100"
+          placeholder="e.g. Guwahati"
+        />
+        <button type="submit" class="primary-btn full-btn">
+          Save location
+        </button>
+      </form>
+    </dialog>
+
+    <dialog id="checkoutDialog" class="modal">
+      <form id="checkoutForm">
+        <div class="modal-header">
+          <div>
+            <span class="eyebrow">ALMOST THERE</span>
+            <h2>Checkout</h2>
+          </div>
+          <button type="button" class="icon-btn" id="closeCheckout">✕</button>
+        </div>
+
+        <p class="muted">Demo order only. No payment or real delivery.</p>
+        <label for="customerName">Full name</label>
+        <input
+          id="customerName"
+          required
+          maxlength="80"
+          placeholder="Enter your name"
+        />
+
+        <label for="customerPhone">Phone number</label>
+        <input
+          id="customerPhone"
+          type="tel"
+          required
+          pattern="[0-9]{10}"
+          maxlength="10"
+          inputmode="numeric"
+          placeholder="10-digit mobile number"
+        />
+
+        <label for="customerAddress">Delivery address</label>
+        <textarea
+          id="customerAddress"
+          required
+          maxlength="400"
+          placeholder="House number, street, area..."
+          rows="3"
+        ></textarea>
+
+        <div class="checkout-total">
+          <span>Order total</span><strong id="checkoutTotal">₹0</strong>
+        </div>
+
+        <button class="primary-btn full-btn" type="submit">
+          Place demo order
+        </button>
+        <p id="checkoutMessage" class="form-message" aria-live="polite"></p>
+      </form>
+    </dialog>
+
+    <dialog id="helpDialog" class="modal">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">QUICKBASKET</span>
+          <h2>Help & information</h2>
+        </div>
+        <button class="icon-btn" id="closeHelp">✕</button>
+      </div>
+      <p>
+        This is a frontend learning project. Products and prices are examples.
+        Real authentication, order storage, payment and delivery services are
+        not connected yet.
+      </p>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
