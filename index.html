@@ -7,12 +7,107 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <header class="navber">
+    <header class="navbar">
       <a href="#" class="logo">Quick<span>Basket</span></a>
+
       <div class="delivery">
         <strong>Delivery in 10-20 minutes</strong>
         <small>Fresh groceries at your doorstep</small>
       </div>
+
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search milk, fruits, bread..."
+      />
+
+      <button id="loginBtn" class="login-btn">Login</button>
+      <button id="cartBtn" class="cart-btn">
+        🛒 Cart (<span id="cartCount">0</span>)
+      </button>
     </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="tag">FRESHNESS AT YOUR DOORSTEP</p>
+          <h1>Groceries delivered<br />in minutes.</h1>
+          <p>Daily essentials, fruits and snacks at great prices.</p>
+          <a href="#products" class="shop-btn">Shop Now →</a>
+        </div>
+        <div class="hero-art">🥦 🥛 🍎</div>
+      </section>
+
+      <section class="categories-section">
+        <h2>Shop by Category</h2>
+        <div id="categories" class="categories"></div>
+      </section>
+
+      <section id="products" class="products-section">
+        <div class="section-heading">
+          <div>
+            <h2>Popular Products</h2>
+            <p>Everything you need for your home.</p>
+          </div>
+          <button id="showAllBtn" class="text-btn">View All</button>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+        <p id="emptyMessage" hidden>No products found.</p>
+      </section>
+
+      <section class="benefits">
+        <div>
+          🚚 <strong>Fast Delivery</strong
+          ><small>Convenient doorstep delivery</small>
+        </div>
+        <div>
+          🥬 <strong>Fresh Products</strong><small>Everyday essentials</small>
+        </div>
+        <div>
+          💚 <strong>Easy Shopping</strong
+          ><small>Simple and secure experience</small>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="#" class="logo">Quick<span>Basket</span></a>
+      <p>Your everyday grocery shopping made simple.</p>
+      <p>© 2026 QuickBasket. Demo project.</p>
+    </footer>
+
+    <div id="cartDrawer" class="cart-drawer" aria-hidden="true">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="closeCart" class="close-btn">✕</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="total-row">
+          <strong>Total</strong>
+          <strong id="cartTotal">₹0</strong>
+        </div>
+        <button id="checkoutBtn" class="checkout-btn">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <dialog id="loginDialog">
+      <form id="loginForm">
+        <button type="button" id="closeLogin" class="close-btn">✕</button>
+        <h2>Welcome Back!</h2>
+        <p>Demo login interface</p>
+        <label for="userName">Your name</label>
+        <input id="userName" required placeholder="Enter your name" />
+        <label for="userEmail">Email</label>
+        <input id="userEmail" type="email" required placeholder="Enter email" />
+        <button type="submit" class="checkout-btn">Continue</button>
+        <p id="loginMessage"></p>
+      </form>
+    </dialog>
+    <script src="javascript.js"></script>
   </body>
 </html>
