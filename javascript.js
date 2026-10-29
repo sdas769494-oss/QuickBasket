@@ -95,6 +95,38 @@ const products = [
     unit: "6 pcs",
     emoji: "🥚",
   },
+  {
+    id: 13,
+    name: "ocean-water",
+    category: "Drinks",
+    price: 70,
+    unit: "500 ml",
+    emoji: "🥤",
+  },
+  {
+    id: 14,
+    name: "Potsto",
+    category: "Vegetables",
+    price: 40,
+    unit: "500 g",
+    emoji: "🥕",
+  },
+  {
+    id: 15,
+    name: "Tomato",
+    category: "Vegetables",
+    price: 40,
+    unit: "500 g",
+    emoji: "🍅",
+  },
+  {
+    id: 16,
+    name: "Mango",
+    category: "Fruits",
+    price: 80,
+    unit: "1 kg",
+    emoji: "🥭",
+  },
 ];
 
 const categories = [
@@ -192,7 +224,7 @@ function renderCart() {
           <small>₹${product.price} × ${cart[product.id]}</small>
         </div>
         <div class="quantity-controls">
-          <button data-minus="${product.id}" aria-label="Decrease quantity">−</button>
+          <button data-minus="${product.id}" aria-label="Decrease quantity">-</button>
           <span>${cart[product.id]}</span>
           <button data-plus="${product.id}" aria-label="Increase quantity">+</button>
         </div>
